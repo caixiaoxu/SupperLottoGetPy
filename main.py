@@ -17,7 +17,7 @@ sql = "CREATE TABLE if not exists Lottery ( nper TEXT PRIMARY KEY , num1 TEXT ,n
 cursor.execute(sql)
 
 # 获取最新一条
-sql = "SELECT * FROM Lottery LIMIT 1"
+sql = "SELECT * FROM Lottery ORDER BY nper DESC LIMIT 1"
 cursor.execute(sql)
 last = cursor.fetchone()
 print("之前最新一条：", last)
